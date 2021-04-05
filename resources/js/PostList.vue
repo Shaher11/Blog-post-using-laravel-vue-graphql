@@ -3,7 +3,7 @@
         <h2 class="text-4xl py-2"> All Posts </h2>
         <div v-if="$apollo.loading"></div>
         <div v-else>
-            <app-post-list-item class="mt-5" v-for="post in posts" :key="post.id" :post="post"></app-post-list-item>
+            <post-list-item class="" v-for="post in posts" :key="post.id" :post="post" > </post-list-item>
         </div>
     </div>
 </template>
@@ -14,7 +14,7 @@
     export default {
 
         components: {
-            appPostListItem: PostListItem
+            PostListItem
         },
 
         apollo: {
