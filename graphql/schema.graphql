@@ -7,7 +7,7 @@ scalar DateTime
 
 type Query {
     users: [User!]! @paginate(defaultCount: 10)
-    user(id: ID @eq): User @find
+    user(id: ID! @eq): User @find
     posts: [Post!]! @all
     post(id: ID! @eq): Post! @find
     topic(slug: String! @eq): Topic @find
@@ -32,11 +32,11 @@ type Topic {
 
 type Post {
     id: ID!
-    author: User!
-    topic: Topic!
     title: String!
     content: String!
     lead: String!
-    created_at: DateTime! @belongsTo
-    updated_at: DateTime! @belongsTo
+    created_at: DateTime! 
+    updated_at: DateTime! 
+    author: User! @belongsTo
+    topic: Topic! @belongsTo
 }

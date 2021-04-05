@@ -4,7 +4,14 @@
             <h4 class="text-2xl pb-3 font-semibold hover:underline">{{post.title}}</h4>
         </router-link>
         <p class="text-gray-600 pb-3">{{post.lead}}</p>
-        <div class="text-sm text-gray-600">By Mohamed Ramadan;in Links&nbsp;. 3 hours ago</div>
+        <div class="text-lg text-gray-600">
+            By  <router-link :to="{name: 'author', params: { id: post.author.id } }" class="underline hover:text-black">
+                    {{post.author.name}}
+                </router-link>
+            in  <router-link :to="{name: 'topic', params: {slug: post.topic.slug} }" class="underline hover:text-black">
+                    {{post.topic.name}}
+                </router-link> &nbsp; - 3 hours ago
+        </div>
     </div>
 </template>
 
