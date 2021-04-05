@@ -10,6 +10,7 @@ import Post from "./Post";
 import PostList from "./PostList";
 import TopicPostList from "./TopicPostList";
 import AuthorPostList from "./AuthorPostList";
+import moment from "moment";
 
 window.Vue = Vue;
 
@@ -38,6 +39,11 @@ const router = new VueRouter({
     mode: "history",
     routes
 });
+
+
+Vue.filter("timeago", value => moment(value).fromNow());
+Vue.filter("longDate", value => moment(value).format("MMM Do YYYY"));
+
 
 const app = new Vue({
     el: "#app",

@@ -30,6 +30,7 @@
         "apollo-boost": "^0.4.9",
         "graphql": "^15.5.0",
         "graphql-tag": "^2.11.0",
+        "moment": "^2.29.1",
         "tailwind": "^4.0.0",
         "vue-apollo": "^3.0.7",
         "vue-resource": "^1.5.2",
